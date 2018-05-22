@@ -1,7 +1,7 @@
-# Cat-Clicker-Premium #
+# Cat-Clicker-Premium Pro #
 
 I took my Cat-Clicker Project(Through Udacity) that I made previously, and re-wrote it with OOP(Object-Oriented Programing). Also I managed to incorporate MVO(Model/View/Octopus) into my JavaScript to keep the code organized.
-* I removed the radio buttons(for the time being), and went with a list item.  I would like to incorporate the radio buttons into this version at some point.  
+* I just recently made the Cat Clicker Premium Pro version!
 
 ## Live-Link ##
 
@@ -31,4 +31,14 @@ To download the repository simply:
 ## Instructions ##
 
 * click the any of the 5 cat names on the application
-* click on the picture of the cat, and see what happens!
+    * The name, picture, and click tracker will apear in the display area.
+
+* click on the picture of the cat, and the click tracker will record the total clicks
+
+* Click the 'Admin' button on the bottom of the screen.
+    * doing so will hide the Admin button and display a Admin Input section
+
+* Clicking the 'Cancle' button will hide the Admin Input Section, as well as clear out your text bar.
+
+* Fill in the Name, Img-URL, and #clicks section, and press the 'Save' button.
+    * doing so will change the name, img, and total clicks for your current cat.
