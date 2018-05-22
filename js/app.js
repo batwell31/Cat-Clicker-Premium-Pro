@@ -82,6 +82,16 @@ var octopus = {
         catView.adminInputElem.classList.add('hide');
         catView.cancleSaveBtnElem.classList.add('hide');
         catView.adminBtn.classList.remove('hide');
+    },
+
+    // save current cat's information in the model
+    saveInputSelections: function () {
+        model.currentCat.name = catView.adminInputNameElem.value;
+        model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
+        model.currentCat.clicks = catView.adminInputclicksElm.value;
+        model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!'
+        catView.render();
+        catListView.render();
     }
 };
 
@@ -100,6 +110,10 @@ var catView = {
         this.adminInputElem = document.querySelector('#adminInput');
         this.cancleSaveBtnElem = document.querySelector('#cancleSaveBtn');
         this.cancleBtn = document.querySelector('#cancleBtn');
+        this.saveBtn = document.querySelector('#saveBtn');
+        this.adminInputNameElem = document.querySelector('#name');
+        this.adminInputImgUrlElm = document.querySelector('#imgUrl');
+        this.adminInputclicksElm = document.querySelector('#adminClicks');
 
         // on click, show the admin input section
         this.adminBtn.addEventListener('click', function() {
@@ -114,6 +128,11 @@ var catView = {
         // on click, increment the current cat's counter
         this.catImageElem.addEventListener('click', function () {
             octopus.incrementCounter();
+        });
+
+        // on click, save the new cats properties to the model
+        this.saveBtn.addEventListener('click', function () {
+            octopus.saveInputSelections();
         });
 
         // render this view (update the DOM elements with the right values)
