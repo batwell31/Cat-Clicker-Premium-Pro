@@ -57,7 +57,10 @@ a.navigation-link {
     text-align: center;
     margin: 0;
 }
-
+.hide {
+    /* hidden by default */
+    display: none;
+}
 @media screen and (max-width: 391px) {
     body {
         font-size: 1.1em;
