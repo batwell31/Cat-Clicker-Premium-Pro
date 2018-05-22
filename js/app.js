@@ -77,11 +77,14 @@ var octopus = {
         catView.adminBtn.classList.add('hide');
     },
 
-    // hide admin input section when cancle is clicked
+    // hide admin input section when cancle is clicked + clear out text bar
     hideAdminInput: function () {
         catView.adminInputElem.classList.add('hide');
         catView.cancleSaveBtnElem.classList.add('hide');
         catView.adminBtn.classList.remove('hide');
+        catView.adminInputNameElem.value = '';
+        catView.adminInputImgUrlElm.value = '';
+        catView.adminInputclicksElm.value = '';
     },
 
     // save current cat's information in the model
