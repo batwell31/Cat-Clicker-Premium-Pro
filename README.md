@@ -5,7 +5,7 @@ I took my Cat-Clicker Project(Through Udacity) that I made previously, and re-wr
 
 ## Live-Link ##
 
-https://batwell31.github.io/cat-clicker-premium-vanilla/
+https://batwell31.github.io/Cat-Clicker-Premium-Pro/
 
 ## API Resources ##
 
