@@ -68,6 +68,20 @@ var octopus = {
     incrementCounter: function () {
         model.currentCat.clicks++;
         catView.render();
+    },
+
+    // shows admin input section when admin button is clicked
+    showAdminInput: function () {
+        catView.adminInputElem.classList.remove('hide');
+        catView.cancleSaveBtnElem.classList.remove('hide');
+        catView.adminBtn.classList.add('hide');
+    },
+
+    // hide admin input section when cancle is clicked
+    hideAdminInput: function () {
+        catView.adminInputElem.classList.add('hide');
+        catView.cancleSaveBtnElem.classList.add('hide');
+        catView.adminBtn.classList.remove('hide');
     }
 };
 
@@ -82,6 +96,20 @@ var catView = {
         this.catNameElem = document.querySelector('#catName');
         this.catImageElem = document.querySelector('#cat-img');
         this.countElem = document.querySelector('#clickTracker');
+        this.adminBtn = document.querySelector('#adminButton');
+        this.adminInputElem = document.querySelector('#adminInput');
+        this.cancleSaveBtnElem = document.querySelector('#cancleSaveBtn');
+        this.cancleBtn = document.querySelector('#cancleBtn');
+
+        // on click, show the admin input section
+        this.adminBtn.addEventListener('click', function() {
+            octopus.showAdminInput();
+        });
+
+        // on click, hide the admin input section
+        this.cancleBtn.addEventListener('click', function () {
+            octopus.hideAdminInput();
+        });
 
         // on click, increment the current cat's counter
         this.catImageElem.addEventListener('click', function () {
