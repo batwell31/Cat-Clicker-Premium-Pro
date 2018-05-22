@@ -88,13 +88,76 @@ var octopus = {
     },
 
     // save current cat's information in the model
-    saveInputSelections: function () {
-        model.currentCat.name = catView.adminInputNameElem.value;
-        model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
-        model.currentCat.clicks = catView.adminInputclicksElm.value;
-        model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!'
-        catView.render();
-        catListView.render();
+    saveInputSelections: function () {    
+        
+        // checks to see if #clicks is NaN, alerting your window and returning false until fixed
+        if (isNaN(catView.adminInputclicksElm.value)) {
+            alert('#clicks must be a number');
+            return false;
+        }
+        // checks to see if click & name text fields are empty
+        if (catView.adminInputclicksElm.value === '' && catView.adminInputNameElem.value === '') {
+            model.currentCat.clicks = model.currentCat.clicks;
+            model.currentCat.name = model.currentCat.name;
+            model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
+            model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
+            catView.render();
+            return;
+        }
+        // checks to see if img & click text fields are empty
+        if (catView.adminInputImgUrlElm.value === '' && catView.adminInputclicksElm.value === '') {
+            model.currentCat.imgSrc = model.currentCat.imgSrc;
+            model.currentCat.clicks = model.currentCat.clicks;
+            model.currentCat.name = catView.adminInputNameElem.value;
+            catView.render();
+            catListView.render();
+            return;
+        }
+        // checks to see if name & img text fields are empty
+        if (catView.adminInputNameElem.value === '' && catView.adminInputImgUrlElm.value === '') {
+            model.currentCat.name = model.currentCat.name;
+            model.currentCat.imgSrc = model.currentCat.imgSrc;
+            model.currentCat.clicks = catView.adminInputclicksElm.value;
+            catView.render();
+            return;
+        }
+        // checks to see if the click text field is the only one empty
+        if (catView.adminInputclicksElm.value === '') {
+            model.currentCat.clicks = model.currentCat.clicks;
+            model.currentCat.name = catView.adminInputNameElem.value;
+            model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
+            model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
+            catView.render();
+            catListView.render();
+            return;
+        }
+        // checks to see if the name text field is the only one empty
+        if (catView.adminInputNameElem.value === '') {
+            model.currentCat.name = model.currentCat.name;
+            model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
+            model.currentCat.clicks = catView.adminInputclicksElm.value;
+            model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
+            catView.render();
+            return;
+        }
+        // checks to see if the img text field is the only one empty
+        if (catView.adminInputImgUrlElm.value === '') {
+            model.currentCat.imgSrc = model.currentCat.imgSrc;
+            model.currentCat.name = catView.adminInputNameElem.value;
+            model.currentCat.clicks = catView.adminInputclicksElm.value;
+            catView.render();
+            catListView.render();
+            return;
+        }
+        // runs if no text fields are empty
+        else {
+            model.currentCat.name = catView.adminInputNameElem.value;
+            model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
+            model.currentCat.clicks = catView.adminInputclicksElm.value;
+            model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
+            catView.render();
+            catListView.render();
+        } 
     }
 };
 
