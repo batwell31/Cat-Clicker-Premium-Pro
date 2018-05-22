@@ -18,6 +18,7 @@ img {
 h1 {
     font-size: 2em;
 }
+
 .catDiv {
     width: 500px;
 }
@@ -44,6 +45,18 @@ a.navigation-link {
     color: #E50914;
     font-size: 1.2em;
 }
+.right {
+    float: right;
+    margin: 0;
+}
+.left {
+    float: left;
+    margin: 0;
+}
+.align-center {
+    text-align: center;
+    margin: 0;
+}
 
 @media screen and (max-width: 391px) {
     body {
@@ -62,7 +75,6 @@ a.navigation-link {
     .click {
         padding: 0;
         margin: 0;
-        font-size: 1.5em;
     }
 }
 
