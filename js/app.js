@@ -95,6 +95,12 @@ var octopus = {
             alert('#clicks must be a number');
             return false;
         }
+        
+        // if all text fields are empty do nothing
+        if (catView.adminInputclicksElm.value === '' && catView.adminInputNameElem.value === '' && catView.adminInputImgUrlElm.value === '') {
+            return;
+        }
+        
         // checks to see if click & name text fields are empty
         if (catView.adminInputclicksElm.value === '' && catView.adminInputNameElem.value === '') {
             model.currentCat.clicks = model.currentCat.clicks;
