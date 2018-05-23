@@ -18,6 +18,9 @@ img {
 h1 {
     font-size: 2em;
 }
+li, img {
+    cursor: pointer;
+}
 
 .catDiv {
     width: 500px;

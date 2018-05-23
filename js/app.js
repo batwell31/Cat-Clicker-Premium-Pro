@@ -81,7 +81,11 @@ var octopus = {
     hideAdminInput: function () {
         catView.adminInputElem.classList.add('hide');
         catView.cancleSaveBtnElem.classList.add('hide');
-        catView.adminBtn.classList.remove('hide');
+        catView.adminBtn.classList.remove('hide');        
+    },
+
+    // resets admin text fields
+    clearAdminTextField: function() {
         catView.adminInputNameElem.value = '';
         catView.adminInputImgUrlElm.value = '';
         catView.adminInputclicksElm.value = '';
@@ -94,6 +98,7 @@ var octopus = {
         if (isNaN(catView.adminInputclicksElm.value)) {
             alert('#clicks must be a number');
             return false;
+            this.clearAdminTextField();
         }
         
         // if all text fields are empty do nothing
@@ -108,6 +113,7 @@ var octopus = {
             model.currentCat.imgSrc = catView.adminInputImgUrlElm.value;
             model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
             catView.render();
+            this.clearAdminTextField();
             return;
         }
         // checks to see if img & click text fields are empty
@@ -117,6 +123,7 @@ var octopus = {
             model.currentCat.name = catView.adminInputNameElem.value;
             catView.render();
             catListView.render();
+            this.clearAdminTextField();
             return;
         }
         // checks to see if name & img text fields are empty
@@ -125,6 +132,7 @@ var octopus = {
             model.currentCat.imgSrc = model.currentCat.imgSrc;
             model.currentCat.clicks = catView.adminInputclicksElm.value;
             catView.render();
+            this.clearAdminTextField();
             return;
         }
         // checks to see if the click text field is the only one empty
@@ -135,6 +143,7 @@ var octopus = {
             model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
             catView.render();
             catListView.render();
+            this.clearAdminTextField();
             return;
         }
         // checks to see if the name text field is the only one empty
@@ -144,6 +153,7 @@ var octopus = {
             model.currentCat.clicks = catView.adminInputclicksElm.value;
             model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
             catView.render();
+            this.clearAdminTextField();
             return;
         }
         // checks to see if the img text field is the only one empty
@@ -153,6 +163,7 @@ var octopus = {
             model.currentCat.clicks = catView.adminInputclicksElm.value;
             catView.render();
             catListView.render();
+            this.clearAdminTextField();
             return;
         }
         // runs if no text fields are empty
@@ -163,6 +174,7 @@ var octopus = {
             model.currentCat.imgAlt = 'a picture of a cute cat we found on the internet!';
             catView.render();
             catListView.render();
+            this.clearAdminTextField();
         } 
     }
 };
